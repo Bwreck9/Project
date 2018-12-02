@@ -10,5 +10,5 @@ Fine-tuning of the HTML form
 
 
 HTML/JS
-Create a form that has 14 selectable options, but you can only select 9.
+A form that has 14 selectable options, but you can only select 9.
 The selected options will be stored in a MYSQL database, and matched against the correct answers.
