@@ -5,7 +5,7 @@ Focusing on the server-side programming & database design layout, will return to
 
 Needs:
 CSS formatting,
-Possibly superior method of Javascript restricting selections?, and the
+Possibly superior method of Javascript restricting selections?, and
 Fine-tuning of the HTML form
 
 
