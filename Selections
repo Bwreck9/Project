@@ -8,7 +8,7 @@ Overview of the HTML/JS
 A form that has 14 selectable options, but you can only select 9.  (The amount of 9 will never change, but the 14 might)
 
 Preferably while only being able to select 1 option per game 
-(This detail is why you see so many commented out scripts. I was able to restrict 1 per game, but it overwrote the overall 9 selection...)
+(This detail is why you see so many commented out scripts. I was able to restrict 1 per game, but it overrode the overall 9 selection...)
 
 The selected options will be sent & stored in a MYSQL database, and matched against the correct answers.
 -->
