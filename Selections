@@ -1,0 +1,242 @@
+
+<html>
+<head>
+<script>
+function checkboxlimit(checkgroup, limit){
+	var checkgroup=checkgroup
+	var limit=limit
+	for (var i=0; i<checkgroup.length; i++){
+		checkgroup[i].onclick=function(){
+		var checkedcount=0
+		for (var i=0; i<checkgroup.length; i++)
+			checkedcount+=(checkgroup[i].checked)? 1 : 0
+		if (checkedcount>limit){
+			alert("You can only select a maximum of "+limit+" checkboxes")
+			this.checked=false
+			}
+		}
+	}
+}
+</script>
+<!--
+<script>
+function checkboxes(){
+  
+  var checkboxes = document.getElementsByName('pick');
+  var checkboxesChecked = [];
+  // loop over them all
+  for (var i=0; i<checkboxes.length; i++) {
+     // And stick the checked ones onto an array...
+     if (checkboxes[i].checked) {
+        checkboxesChecked.push(checkboxes[i].value);
+     }
+  }
+  document.getElementById("show").value = checkboxesChecked;
+
+}
+
+</script>
+-->
+
+<!--
+<script>
+function checkbox() {
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck");
+  // Get the output text
+  var text = document.getElementById("text");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
+</script>
+-->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.chkbx').click(function(){
+	var text= "";
+	$('.chkbx:checked').each(function(){
+		text+=$(this).val()+ ',';
+		
+	});
+	text=text.substring(0,text.length-1);
+	$('#selectedtext').val(text);
+	var count = $("[type='checkbox']:checked").length;
+		$('#count').val($("[type='checkbox']:checked").length);
+	});
+});
+</script>
+
+</head>
+
+<body>
+<form name="form1" method="post" action="/action_page.py">
+<!-- <form name="form1" method="post" action="/action_page.php">  -->
+
+<h1>GAME 1</h1>
+<input class="chkbx" type='checkbox' name="pick" value="pick1" />Option1<br />
+<input class="chkbx" type='checkbox' name="pick" value="pick2" />Option2<br />
+
+<h1>GAME 2</h1>
+<input class="chkbx" type='checkbox' name="pick" value="pick3" />Option3<br />
+<input class="chkbx" type='checkbox' name="pick" value="pick4" />Option4<br />
+
+<h1>GAME 3</h1>
+<input class="chkbx" type='checkbox' name="pick" value="pick5" />Option5<br />
+<input class="chkbx" type='checkbox' name="pick" value="pick6" />Option6<br />
+
+<h1>GAME 4</h1>
+<input class="chkbx" type='checkbox' name="pick" value="pick7" />Option7<br />
+<input class="chkbx" type='checkbox' name="pick" value="pick8" />Option8<br />
+
+<h1>GAME 5</h1>
+<input class="chkbx" type='checkbox' name="pick" value="pick9" />Option9<br />
+<input class="chkbx" type='checkbox' name="pick" value="pick10" />Option10<br />
+
+<h1>GAME 6</h1>
+<input class="chkbx" type='checkbox' name="pick" value="pick11" />Option11<br />
+<input class="chkbx" type='checkbox' name="pick" value="pick12" />Option12<br />
+
+<h1>GAME 7</h1>
+<input class="chkbx" type='checkbox' name="pick" value="pick13" />Option13<br />
+<input class="chkbx" type='checkbox' name="pick" value="pick14" />Option14<br />
+
+<h1>GAME 8</h1>
+<input class="chkbx" type='checkbox' name="pick" value="pick15" />Option15<br />
+<input class="chkbx" type='checkbox' name="pick" value="pick16" />Option16<br />
+
+<h1>GAME 9</h1>
+<input class="chkbx" type='checkbox' name="pick" value="pick17" />Option17<br />
+<input class="chkbx" type='checkbox' name="pick" value="pick18" />Option18<br />
+
+<h1>GAME 10</h1>
+<input class="chkbx" type='checkbox' name="pick" value='pick19' />Option19<br />
+<input class="chkbx" type='checkbox' name="pick" value='pick20' />Option20<br />
+
+<br />
+Selected Checkboxes (Adjust box as needed)
+<br />
+<textarea rows="10" cols="50" type='text' id='selectedtext' placeholder="Selected Checkboxes"></textarea></br>
+
+<br />
+Number of Selected Checkboxes
+<br />
+<input type ='text' id='count' placeholder="Number of Selected Checkboxes">
+
+
+
+<br />
+<input type="reset" value="Reset All" />
+
+<input type="submit" value="Submit" />
+
+<!--Define a hidden field (not visible to a user).
+A hidden field often stores what database record that needs to be updated when the form is submitted:
+<input type="hidden" id="custId" name="custId" value="3487">
+-->
+</form>
+
+
+<!--
+<script>
+function myFunction() {
+    var coffee = document.form1[0];
+    var txt = "";
+    var i;
+    for (i = 0; i < coffee.length; i++) {
+        if (coffee[i].checked) {
+            txt = txt + coffee[i].value + " ";
+        }
+    }
+    document.getElementByClassName("single-checkbox").length = "Number of checkboxes selected: " + txt;
+}
+-->
+<!--
+document.form1('input[type="checkbox"]:checked').length);
+-->
+</script>
+
+<script>
+document.form1.getElementsByName("pick").length = "Number of checkboxes selected: " + txt;
+</script>
+
+<!--//Syntax: checkboxlimit(checkbox_reference, limit)-->
+<script>
+checkboxlimit(document.forms.form1, 9)
+</script>
+</body>
+</html>
+
+
+<!-- This script works, just moved it to test something else, but could be useful?
+//Syntax: checkboxlimit(checkbox_reference, limit)
+checkboxlimit(document.forms.form1, 9)
+-->
+
+<!-- This script works, just moved it to test something else, but could be useful?
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.chkbx').click(function(){
+	var text= "";
+	$('.chkbx:checked').each(function(){
+		text+=$(this).val()+ ',';
+	});
+	text=text.substring(0,text.length-1);
+	$('#selectedtext').val(text);
+	var count = $("[type='checkbox']:checked").length;
+		$('#count').val($("[type='checkbox']:checked").length);
+	});
+});
+</script>
+
+<textarea rows="10" cols="20" type='text' id='selectedtext' placeholder="Selected Checkboxes"></textarea></br>
+<input type ='text' id='count' placeholder="Number of Selected Checkboxes">
+-->
+
+<!--
+<?php>
+$checked_count = count($_POST['single-checkbox']);
+echo "You have selected following ".$checked_count." option(s): <br/>";
+?>
+
+-->
+
+
+<!--
+PHP - Validate URL  https://www.w3schools.com/php/php_form_url_email.asp
+$website = test_input($_POST["website"]);
+if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+  $websiteErr = "Invalid URL"; 
+}
+-->
+
+<!-- Works
+<!-- This script works, just moved it to test something else, but could be useful?
+<script type="text/javascript">
+function limit_checkbox(name,obj,max)
+   {
+   var count=0;
+   var x=document.getElementsByName(name);
+   for (var i=0; i < x.length; i++)
+      {
+      if(x[i].checked)
+	     {
+         count = count + 1;
+		 }
+	  }	
+   if (count > max)
+	  {
+	  alert('Please select only ' + max + ' checkbox per game.\ ');
+	  obj.checked = false;
+      }
+   }
+</script>
+
+
+
