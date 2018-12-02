@@ -4,8 +4,8 @@ Very raw HTML form with basic Javascript.   The beginning piece of a considerabl
 Focusing on the server-side programming & database design layout, will return to this.
 
 Needs:
-CSS formatting,
-Possibly superior method of Javascript restricting selections?, and
+CSS formatting//
+Possibly superior method of Javascript restricting selections?//
 Fine-tuning of the HTML form
 
 
